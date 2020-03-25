@@ -1,0 +1,48 @@
+#1.Exercise
+def max_of_two( x, y ):
+ if x > y:
+  return x
+ return y
+def max_of_three( x, y, z ):
+ return max_of_two( x, max_of_two( y, z ) )
+print(max_of_three(3, 6, -5))
+
+#2.Exercise
+def multiply(num):
+  total=1
+  for x in num:
+    total*=x
+  return total
+print(multiply((8,2,5,6,-2)))
+
+#3.Exercise
+def test_prime(n):
+  if (n==1):
+    return False
+  elif (n==2):
+    return True
+  else:
+    for x in range(2,n):
+      if(n%x==0):
+        return False
+    return True
+print(test_prime(9))
+
+#4.Exercise
+def perfect_num(l):
+  sum=0
+  for x in range(1,l):
+    if l%x==0:
+      sum+=x
+  return sum==l
+print(perfect_num(9))
+
+#5.Exercise
+def pascal_triangle(n):
+  trow=[1]
+  y=[0]
+  for x in range(max(n,0)):
+    print(trow)
+    trow=[l+r for l, r in zip(trow+y, y+trow)]
+  return n>1
+pascal_triangle(6)
